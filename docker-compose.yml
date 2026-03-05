@@ -8,12 +8,12 @@ services:
 
     environment:
       - ENV=PROD
-      - PRIVATE_KEY_PATH=/run/secrets/privatekey.pem
-      - CERT_PATH=/run/secrets/server.crt
+      - PRIVATE_KEY_PATH=/app/privatekey.pem
+      - CERT_PATH=/app/server.crt
 
     volumes:
-      - /opt/myapp/secrets/privatekey.pem:/run/secrets/privatekey.pem:ro
-      - /opt/myapp/secrets/server.crt:/run/secrets/server.crt:ro
+      - /opt/myapp/secrets/privatekey.pem:/app/privatekey.pem:ro
+      - /opt/myapp/secrets/server.crt:/app/server.crt:ro
 
     ports:
       - "80:3000"
